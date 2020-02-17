@@ -1,0 +1,13 @@
+name: CI
+on: [push]
+jobs:
+  update-gist:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: Update gist
+        uses: matchai/waka-box@master
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          GIST_ID: 9b71e4a16a244d7475d9a0e7e833231b
+          WAKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }}
